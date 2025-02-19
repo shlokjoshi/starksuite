@@ -29,26 +29,10 @@
       * {
         box-sizing: border-box;
       }
-
-      doc-title {
-        margin-top: 78px;
-      }
-
-      @media print {
-        doc-title {
-          margin-top: 0px;
-        }
-      }
     </style>
   </head>
-
   <body>
-    <script type="module" src="./apps/default/main.ts"></script>
-    <div
-      id="app"
-      style="margin: 0; overflow: initial; height: 100%; box-shadow: initial"
-    >
-      <div id="inspector"></div>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/apps/main.tsx"></script>
   </body>
 </html>

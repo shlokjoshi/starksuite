@@ -11,10 +11,17 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "noEmit": true,
-    "composite": false
+    "composite": false,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["apps/*"]
+    }
   },
-  "include": ["./apps", "./examples"],
+  "include": ["apps", "examples"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
