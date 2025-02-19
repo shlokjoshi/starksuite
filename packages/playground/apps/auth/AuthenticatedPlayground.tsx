@@ -8,6 +8,7 @@ import {
   initDefaultDocCollection,
 } from '../default/utils/collection';
 import { mountDefaultDocEditor } from '../default/utils/editor';
+import { NavBar } from './components/NavBar';
 
 blocksEffects();
 presetsEffects();
@@ -28,16 +29,19 @@ export function AuthenticatedPlayground() {
   }, []);
 
   return (
-    <div
-      id="app"
-      style={{
-        margin: 0,
-        overflow: 'initial',
-        height: '100%',
-        boxShadow: 'initial',
-      }}
-    >
-      <div id="inspector"></div>
-    </div>
+    <>
+      <NavBar />
+      <div
+        id="app"
+        style={{
+          margin: 0,
+          overflow: 'initial',
+          height: '100%',
+          boxShadow: 'initial',
+        }}
+      >
+        <div id="inspector"></div>
+      </div>
+    </>
   );
 }

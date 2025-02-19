@@ -1,0 +1,205 @@
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff;
+  }
+  50% {
+    text-shadow:
+      0 0 20px #00ffff,
+      0 0 40px #00ffff,
+      0 0 60px #00ffff;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+  }
+}
+
+.cyberpunk-container {
+  min-height: 100vh;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.star.small {
+  width: 1px;
+  height: 1px;
+  opacity: 0.5;
+}
+
+.star.medium {
+  width: 2px;
+  height: 2px;
+  opacity: 0.7;
+}
+
+.star.large {
+  width: 3px;
+  height: 3px;
+  opacity: 0.9;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.icon-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.wordmark-logo {
+  width: 600px;
+  height: auto;
+  animation: logoGlow 4s ease-in-out infinite;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #00ffff;
+  margin-bottom: 3rem;
+  text-align: center;
+  opacity: 0.8;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cyber-button {
+  padding: 1rem 2.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.cyber-button.cyan {
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.cyber-button.orange {
+  color: #ff6b00;
+  border: 2px solid #ff6b00;
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+}
+
+.cyber-button.cyan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.cyber-button.orange:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 107, 0, 0.5);
+  background: rgba(255, 107, 0, 0.1);
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      transparent 95%,
+      rgba(0, 255, 255, 0.2) 95%
+    ),
+    linear-gradient(90deg, transparent 95%, rgba(0, 255, 255, 0.2) 95%);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
