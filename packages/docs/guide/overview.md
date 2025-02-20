@@ -26,7 +26,43 @@ BlockSuite originated from the [AFFiNE](https://github.com/toeverything/AFFiNE) 
 
 During the development of AFFiNE, it became clear that BlockSuite was advancing beyond merely being an in-house editor and evolving into a versatile framework. That's why we chose to open source and maintain BlockSuite independently.
 
-<!-- ## Examples -->
+## Block System Architecture
+
+BlockSuite's block system is built on a few key architectural principles:
+
+### Block Tree Structure
+
+- Each document manages an independent block tree
+- Blocks are defined through BlockSchema which specifies:
+  - Fields and properties
+  - Nesting relationships between block types
+  - Unique block.flavour with namespace:name structure
+
+### Core Components
+
+1. **Schema**: Defines block structure and properties
+2. **Service**: Handles block-specific logic and behavior
+3. **View**: Frontend framework-specific rendering (uses web components by default)
+
+### State Management
+
+- All block operations (add/update/delete) are automatically recorded
+- Granular undo/redo control through doc.captureSync()
+- Cross-document state management for complex knowledge structures
+
+### Implementation Patterns
+
+Two main approaches for creating blocks:
+
+1. **Full Block Spec**: Complete control through schema, service, and view
+2. **Embed Blocks**: Simplified approach for self-contained blocks
+
+This architecture enables:
+
+- Multimodal content editing
+- Complex knowledge organization
+- Native collaboration support
+- Framework-agnostic implementation
 
 ## Features
 

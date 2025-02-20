@@ -1,5 +1,6 @@
 import { SignIn, SignUp } from '@clerk/clerk-react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 
 import { AuthenticatedPlayground } from './AuthenticatedPlayground';
 import { AuthProvider } from './AuthProvider';
@@ -66,23 +67,40 @@ const SignUpPage = () => {
   );
 };
 
+function RouteHandler() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Hide debug menu on non-playground routes
+    const debugMenu = document.querySelector('.debug-menu');
+    if (debugMenu) {
+      debugMenu.style.display =
+        location.pathname === '/playground' ? 'block' : 'none';
+    }
+  }, [location.pathname]);
+
+  return (
+    <Routes>
+      <Route element={<LandingPage />} path="/" />
+      <Route element={<SignInPage />} path="/sign-in/*" />
+      <Route element={<SignUpPage />} path="/sign-up/*" />
+      <Route
+        element={
+          <ProtectedRoute>
+            <AuthenticatedPlayground />
+          </ProtectedRoute>
+        }
+        path="/playground"
+      />
+    </Routes>
+  );
+}
+
 export function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route element={<LandingPage />} path="/" />
-          <Route element={<SignInPage />} path="/sign-in/*" />
-          <Route element={<SignUpPage />} path="/sign-up/*" />
-          <Route
-            element={
-              <ProtectedRoute>
-                <AuthenticatedPlayground />
-              </ProtectedRoute>
-            }
-            path="/playground"
-          />
-        </Routes>
+        <RouteHandler />
       </AuthProvider>
     </BrowserRouter>
   );
