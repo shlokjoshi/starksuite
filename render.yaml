@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: starksuite
+    env: static
+    buildCommand: yarn install && yarn workspace @blocksuite/playground build
+    staticPublishPath: ./packages/playground/dist
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: NODE_VERSION
+        value: 18.19.0
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache

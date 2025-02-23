@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "buildCommand": "yarn build",
+  "outputDirectory": "packages/playground/dist",
+  "installCommand": "yarn install",
+  "framework": null,
+  "builds": [
+    {
+      "src": "packages/playground/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/playground/dist/$1"
+    }
+  ]
+}
