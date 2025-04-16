@@ -74,7 +74,7 @@ function RouteHandler() {
     // Hide debug menu on non-playground routes
     const debugMenu = document.querySelector('.debug-menu');
     if (debugMenu) {
-      debugMenu.style.display =
+      (debugMenu as HTMLElement).style.display =
         location.pathname === '/playground' ? 'block' : 'none';
     }
   }, [location.pathname]);

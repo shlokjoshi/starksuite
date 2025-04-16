@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react';
+
 import { ClerkProvider, useAuth } from '@clerk/clerk-react';
 import { ConvexReactClient } from 'convex/react';
 import { ConvexProviderWithClerk } from 'convex/react-clerk';
-import { ReactNode } from 'react';
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL);
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;

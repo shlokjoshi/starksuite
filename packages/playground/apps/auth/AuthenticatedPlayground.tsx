@@ -71,7 +71,7 @@ export function AuthenticatedPlayground() {
         presenterToggle.onclick = () => {
           const editor = document.querySelector('affine-editor-container');
           if (editor) {
-            editor.toggleMode?.();
+            (editor as { toggleMode?: () => void }).toggleMode?.();
           }
         };
 
