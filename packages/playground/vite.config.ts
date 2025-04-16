@@ -160,6 +160,9 @@ const clearSiteDataPlugin = () =>
 // https://vitejs.dev/config/
 export default defineConfig({
   envDir: __dirname,
+  server: {
+    allowedHosts: ['starksuite.onrender.com', 'demo.stark.so'],
+  },
   plugins: [
     react(),
     hmrPlugin,
