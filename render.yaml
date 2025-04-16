@@ -1,9 +1,9 @@
 services:
   - type: web
     name: starksuite
-    env: static
-    buildCommand: yarn install && yarn workspace @blocksuite/playground build
-    staticPublishPath: ./packages/playground/dist
+    env: node
+    buildCommand: yarn install && yarn build
+    startCommand: cd packages/playground && yarn dev
     pullRequestPreviewsEnabled: true
     envVars:
       - key: NODE_VERSION
