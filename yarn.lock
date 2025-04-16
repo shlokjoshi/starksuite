@@ -4620,6 +4620,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shoelace-style/shoelace@npm:^2.20.0":
+  version: 2.20.0
+  resolution: "@shoelace-style/shoelace@npm:2.20.0"
+  dependencies:
+    "@ctrl/tinycolor": "npm:^4.1.0"
+    "@floating-ui/dom": "npm:^1.6.12"
+    "@lit/react": "npm:^1.0.6"
+    "@shoelace-style/animations": "npm:^1.2.0"
+    "@shoelace-style/localize": "npm:^3.2.1"
+    composed-offset-position: "npm:^0.0.6"
+    lit: "npm:^3.2.1"
+    qr-creator: "npm:^1.0.0"
+  checksum: 10/202b226c9fa92950c6900c80899b6f95b13c0d79210c956a1c9be75ae6c87b4d7a210bfe355a6580ef423a78c32e141869dba302713dba055ec2339c9dbdc383
+  languageName: node
+  linkType: hard
+
 "@sinclair/typebox@npm:^0.27.8":
   version: 0.27.8
   resolution: "@sinclair/typebox@npm:0.27.8"
@@ -5395,7 +5411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^22.5.0":
+"@types/node@npm:*":
   version: 22.10.2
   resolution: "@types/node@npm:22.10.2"
   dependencies:
@@ -5408,6 +5424,15 @@ __metadata:
   version: 12.20.55
   resolution: "@types/node@npm:12.20.55"
   checksum: 10/1f916a06fff02faadb09a16ed6e31820ce170798b202ef0b14fc244bfbd721938c54a3a99836e185e4414ca461fe96c5bb5c67c3d248f153555b7e6347f061dd
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.13.5":
+  version: 22.13.5
+  resolution: "@types/node@npm:22.13.5"
+  dependencies:
+    undici-types: "npm:~6.20.0"
+  checksum: 10/a69ec8dba36a58a93e3ec3709a6a362ca0cdd8443310bb5e43b0c1f560c57bcc120c96fabb301ef42c2901f46103adad5158b6923ea14e8e14a432af20a2bb24
   languageName: node
   linkType: hard
 
@@ -6649,13 +6674,14 @@ __metadata:
     "@nx/vite": "npm:20.2.1"
     "@open-wc/dev-server-hmr": "npm:^0.2.0"
     "@playwright/test": "npm:1.49.1"
+    "@shoelace-style/shoelace": "npm:^2.20.0"
     "@size-limit/esbuild-why": "npm:^11.1.5"
     "@size-limit/preset-small-lib": "npm:^11.1.4"
     "@stylistic/eslint-plugin-ts": "npm:^2.4.0"
     "@swc-node/register": "npm:^1.10.9"
     "@swc/core": "npm:^1.7.14"
     "@types/jscodeshift": "npm:^0.12.0"
-    "@types/node": "npm:^22.5.0"
+    "@types/node": "npm:^22.13.5"
     "@types/react": "npm:^19.0.10"
     "@types/react-dom": "npm:^19.0.4"
     "@typescript-eslint/eslint-plugin": "npm:^8.0.0"
@@ -6680,7 +6706,9 @@ __metadata:
     husky: "npm:^9.1.5"
     jscodeshift: "npm:^17.0.0"
     lint-staged: "npm:^15.2.9"
+    lit: "npm:^3.2.1"
     lit-analyzer: "npm:2.0.3"
+    lit-html: "npm:^3.2.1"
     lz-string: "npm:^1.5.0"
     madge: "npm:^8.0.0"
     markdown-table: "npm:^3.0.3"
@@ -6696,6 +6724,7 @@ __metadata:
     terser: "npm:^5.31.6"
     ts-lit-plugin: "npm:^2.0.2"
     tsx: "npm:^4.19.0"
+    tweakpane: "npm:^4.0.5"
     typescript: "npm:5.7.2"
     vite: "npm:5.4.11"
     vite-plugin-istanbul: "npm:^6.0.2"
@@ -14791,7 +14820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tweakpane@npm:^4.0.4":
+"tweakpane@npm:^4.0.4, tweakpane@npm:^4.0.5":
   version: 4.0.5
   resolution: "tweakpane@npm:4.0.5"
   checksum: 10/7719a15ce96dd2b936b277239ccb18ee6a75ed2416a6bdacfc537515d909da6edd50161b12e91441ace5243efad3a14a98fe6e5475cae2617d7647a197117e64

@@ -64,7 +64,7 @@
     "@swc-node/register": "^1.10.9",
     "@swc/core": "^1.7.14",
     "@types/jscodeshift": "^0.12.0",
-    "@types/node": "^22.5.0",
+    "@types/node": "^22.13.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
@@ -130,6 +130,10 @@
     "side-channel": "npm:@nolyfill/side-channel@^1"
   },
   "dependencies": {
-    "@size-limit/esbuild-why": "^11.1.5"
+    "@shoelace-style/shoelace": "^2.20.0",
+    "@size-limit/esbuild-why": "^11.1.5",
+    "lit": "^3.2.1",
+    "lit-html": "^3.2.1",
+    "tweakpane": "^4.0.5"
   }
 }
