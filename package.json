@@ -33,6 +33,7 @@
     "build:packages": "yarn workspace @blocksuite/affine build",
     "build:playground": "yarn workspace @blocksuite/playground build",
     "build:docs": "yarn workspace @blocksuite/docs build",
+    "start": "yarn workspace @blocksuite/playground dev",
     "size:generate": "./scripts/size-generate.sh",
     "ci:version": "changeset version && yarn install --no-frozen-lockfile",
     "ci:publish": "yarn build:packages && yarn workspaces foreach -Ap --no-private npm publish --tolerate-republish --access public --tag latest",

@@ -3,7 +3,7 @@ services:
     name: starksuite
     env: node
     buildCommand: yarn install && yarn build
-    startCommand: cd packages/playground && yarn dev
+    startCommand: yarn start
     pullRequestPreviewsEnabled: true
     envVars:
       - key: NODE_VERSION
