@@ -61,13 +61,13 @@ export function LandingPage() {
           className="cyber-button cyan"
           onClick={() => navigate('/sign-in')}
         >
-          Access Portal
+          Sign In
         </button>
         <button
           className="cyber-button orange"
           onClick={() => navigate('/sign-up')}
         >
-          Initialize
+          Sign Up
         </button>
       </div>
     </div>

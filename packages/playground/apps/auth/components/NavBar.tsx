@@ -85,7 +85,7 @@ export function NavBar() {
           boxShadow: buttonShadow,
         }}
       >
-        Disconnect
+        Log Out
       </button>
     </div>
   );
