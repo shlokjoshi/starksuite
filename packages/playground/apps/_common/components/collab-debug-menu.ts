@@ -307,12 +307,14 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
     return this;
   }
 
-  override disconnectedCallback() {
-    super.disconnectedCallback();
-
-    const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
-    matchMedia.removeEventListener('change', this._darkModeChange);
-    document.body.removeEventListener('keydown', this._keydown);
+  disconnectedCallback() {
+    // Defensive: clean up any global listeners or DOM artifacts
+    super.disconnectedCallback?.();
+    // Remove any top-container or debug-menu elements created by this component
+    this.shadowRoot
+      ?.querySelectorAll('.top-container, .debug-menu')
+      .forEach(el => el.remove());
+    // Additional cleanup logic here if needed
   }
 
   override firstUpdated() {
@@ -323,6 +325,7 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
   }
 
   override render() {
+    if (!this.isLoggedIn) return nothing;
     return html`
       <style>
         .collab-debug-menu {
@@ -365,16 +368,11 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
           pointer-events: auto;
         }
 
-        .edgeless-toolbar {
+        .top-container {
+          display: flex;
           align-items: center;
-          margin-right: 17px;
-          pointer-events: auto;
-        }
-
-        .edgeless-toolbar sl-select,
-        .edgeless-toolbar sl-color-picker,
-        .edgeless-toolbar sl-button {
-          margin-right: 4px;
+          gap: 12px;
+          font-size: 16px;
         }
       </style>
       <div class="collab-debug-menu default">
@@ -603,6 +601,9 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
 
   @property({ attribute: false })
   accessor editor!: AffineEditorContainer;
+
+  @property({ type: Boolean })
+  accessor isLoggedIn = true;
 
   @property({ attribute: false })
   accessor leftSidePanel!: LeftSidePanel;

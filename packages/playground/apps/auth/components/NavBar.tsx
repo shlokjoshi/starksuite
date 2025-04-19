@@ -32,6 +32,11 @@ export function NavBar() {
   }, []);
 
   const handleSignOut = async () => {
+    // Manually hide/remove all debug menu elements before sign out
+    document.querySelectorAll('collab-debug-menu').forEach(el => el.remove());
+    document
+      .querySelectorAll('.collab-debug-menu, .top-container, .debug-menu')
+      .forEach(el => el.remove());
     await signOut();
     navigate('/');
   };

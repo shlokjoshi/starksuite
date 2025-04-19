@@ -164,8 +164,11 @@ export function AuthenticatedPlayground() {
       initPlayground().catch(console.error);
     } else {
       // Remove collab debug menu if present
-      const debugMenu = document.querySelector('collab-debug-menu');
-      debugMenu?.remove();
+      document.querySelectorAll('collab-debug-menu').forEach(el => el.remove());
+      // Remove any debug menu containers left in the DOM
+      document
+        .querySelectorAll('.collab-debug-menu, .top-container, .debug-menu')
+        .forEach(el => el.remove());
     }
   }, [isSignedIn]);
 
@@ -187,6 +190,8 @@ export function AuthenticatedPlayground() {
       >
         <div id="inspector"></div>
       </div>
+      {/* Defensive: pass isLoggedIn to collab-debug-menu if ever mounted via JSX */}
+      {/* <collab-debug-menu isLoggedIn={isSignedIn} /> */}
     </>
   );
 }
