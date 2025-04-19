@@ -162,6 +162,10 @@ export function AuthenticatedPlayground() {
 
     if (isSignedIn) {
       initPlayground().catch(console.error);
+    } else {
+      // Remove collab debug menu if present
+      const debugMenu = document.querySelector('collab-debug-menu');
+      debugMenu?.remove();
     }
   }, [isSignedIn]);
 
