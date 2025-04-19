@@ -426,10 +426,6 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
                     </sl-menu-item>
                   </sl-menu>
                 </sl-menu-item>
-                <sl-menu-item @click=${this._clearSiteData}>
-                  Clear Site Data
-                  <sl-icon slot="prefix" name="trash"></sl-icon>
-                </sl-menu-item>
                 <sl-menu-item @click=${this._toggleDarkMode}>
                   Toggle ${this._dark ? 'Light' : 'Dark'} Mode
                   <sl-icon
@@ -437,16 +433,6 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
                     name=${this._dark ? 'moon' : 'brightness-high'}
                   ></sl-icon>
                 </sl-menu-item>
-                <sl-divider></sl-divider>
-                <a
-                  target="_blank"
-                  href="https://github.com/toeverything/blocksuite"
-                >
-                  <sl-menu-item>
-                    <sl-icon slot="prefix" name="github"></sl-icon>
-                    GitHub
-                  </sl-menu-item>
-                </a>
               </sl-menu>
             </sl-dropdown>
 
