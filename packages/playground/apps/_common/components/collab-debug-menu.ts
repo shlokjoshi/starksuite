@@ -129,11 +129,6 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
     this.doc.addBlock('affine:paragraph', {}, noteId);
   }
 
-  private async _clearSiteData() {
-    await fetch('/Clear-Site-Data');
-    window.location.reload();
-  }
-
   private _exportHtml() {
     const htmlTransformer = this.rootService?.transformers.html;
     htmlTransformer?.exportDoc(this.doc).catch(console.error);
@@ -307,7 +302,7 @@ export class CollabDebugMenu extends SignalWatcher(ShadowlessElement) {
     return this;
   }
 
-  disconnectedCallback() {
+  override disconnectedCallback() {
     // Defensive: clean up any global listeners or DOM artifacts
     super.disconnectedCallback?.();
     // Remove any top-container or debug-menu elements created by this component
